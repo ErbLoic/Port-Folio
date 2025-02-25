@@ -10,12 +10,19 @@ document.addEventListener('DOMContentLoaded', function() {
         project.addEventListener('click', function() {
             const title = this.querySelector('h3').textContent;
             const imageSrc = this.querySelector('img').src;
-            const description = this.querySelector('p').textContent;
+            const description = this.querySelectorAll('p');
 
             modalTitle.textContent = title;
             modalImage.src = imageSrc;
-            modalDescription.textContent = description;
+            modalDescription.innerHTML = '';
+
+            description.forEach(paragraph => {
+                modalDescription.innerHTML += `<p>${paragraph.innerHTML}</p>`;
+            });
+
             modal.style.display = 'flex';
+            modalImage.style.maxWidth = '100%';
+            modalImage.style.height = 'auto';
         });
     });
 

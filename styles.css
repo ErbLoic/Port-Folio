@@ -77,6 +77,21 @@ section {
     border-radius: 5px;
 }
 
+.stage-announcement {
+    background-color: #f0f8ff;
+    border-left: 5px solid #6B73FF;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.stage-announcement p {
+    margin: 0;
+    font-weight: bold;
+}
+
 #projects {
     text-align: center;
 }
@@ -95,12 +110,16 @@ section {
     transition: transform 0.3s;
     text-align: left;
     cursor: pointer;
+    overflow: hidden; /* Cache tout débordement potentiel */
 }
 
 .project img {
-    max-width: 100%;
+    width: 100%; /* Assure que l'image prend toute la largeur du conteneur */
+    height: auto; /* Conserve les proportions de l'image */
     border-radius: 8px;
     margin-bottom: 15px;
+    transition: transform 0.3s;
+    object-fit: contain; /* Assure que l'image s'adapte sans déborder */
 }
 
 .project:hover {
@@ -174,17 +193,31 @@ footer {
     cursor: pointer;
 }
 
-.stage-announcement {
-    background-color: #f0f8ff;
-    border-left: 5px solid #6B73FF;
-    padding: 15px;
-    border-radius: 5px;
-    margin-top: 20px;
-    font-size: 1.1rem;
-    color: #333;
+#projet2bis{
+    width: 50%;
+    margin-left: 15%;
 }
 
-.stage-announcement p {
-    margin: 0;
-    font-weight: bold;
+
+input[type="submit"] {
+    display: block; 
+    margin: 20px auto; 
+    color: #fff;
+    text-decoration: none;
+    width: 20rem;
+    height: 3rem;
+    border-radius: 15px;
+    background-color: #1f2afd;
+    border: none;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    font-size: 1.2rem; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+input[type="submit"]:hover {
+    width: 22rem; 
+    border-radius: 10px;
+    background-color: #000DFF;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
 }
