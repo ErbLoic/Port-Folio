@@ -1,20 +1,31 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const projects = document.querySelectorAll('.project');
+    const modal = document.getElementById('projectModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalImage = document.getElementById('modalImage');
+    const modalDescription = document.getElementById('modalDescription');
+    const closeModal = document.querySelector('.close');
 
-document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault();
+    projects.forEach(project => {
+        project.addEventListener('click', function() {
+            const title = this.querySelector('h3').textContent;
+            const imageSrc = this.querySelector('img').src;
+            const description = this.querySelector('p').textContent;
 
-    // Récupérez les valeurs du formulaire
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
+            modalTitle.textContent = title;
+            modalImage.src = imageSrc;
+            modalDescription.textContent = description;
+            modal.style.display = 'flex';
+        });
+    });
 
-    // Envoyez l'email via EmailJS
-    emailjs.send("service_uoi2jox", "template_9t6ro7q", {
-        from_name: name,
-        from_email: email,
-        message: message
-    }).then(function(response) {
-        alert('Votre message a été envoyé avec succès !');
-    }, function(error) {
-        alert('Il y a eu une erreur lors de l\'envoi de votre message. Veuillez réessayer.');
+    closeModal.addEventListener('click', function() {
+        modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
     });
 });

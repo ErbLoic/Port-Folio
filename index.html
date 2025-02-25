@@ -5,16 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script type="text/javascript">
-    (function(){
-        emailjs.init("85w_pszc5kd8nggAS"); // Remplacez par votre User ID d'EmailJS
-    })();
-</script>
-
     <header>
         <nav>
             <div class="logo">Mon Portfolio</div>
@@ -32,14 +25,14 @@
 
     <section id="about">
         <h2>À propos de moi</h2>
-        <p>Bonjour, je suis [Votre Nom], un développeur passionné par la création de sites web et d'applications. J'aime transformer des idées en réalité numérique.</p>
+        <p>Bonjour, je suis Erbuer Loïc, un développeur passionné par la création de sites web et d'applications. J'aime transformer des idées en réalité numérique.</p>
         <div class="skills">
             <h3>Compétences</h3>
             <ul>
                 <li>HTML/CSS</li>
-                <li>JavaScript</li>
-                <li>React</li>
-                <li>Node.js</li>
+                <li>PHP</li>
+                <li>Python</li>
+                <li>C#</li>
                 <li>Design Responsive</li>
             </ul>
         </div>
@@ -48,15 +41,18 @@
     <section id="projects">
         <h2>Mes Projets</h2>
         <div class="project-grid">
-            <div class="project">
+            <div class="project" data-modal-id="project1">
+                <img src="project1.jpg" alt="Projet 1">
                 <h3>Projet 1</h3>
                 <p>Description du projet 1. Ce projet a été réalisé pour résoudre un problème spécifique.</p>
             </div>
-            <div class="project">
+            <div class="project" data-modal-id="project2">
+                <img src="project2.jpg" alt="Projet 2">
                 <h3>Projet 2</h3>
                 <p>Description du projet 2. Ce projet met en avant mes compétences en développement.</p>
             </div>
-            <div class="project">
+            <div class="project" data-modal-id="project3">
+                <img src="project3.jpg" alt="Projet 3">
                 <h3>Projet 3</h3>
                 <p>Description du projet 3. Un projet innovant qui a eu un impact significatif.</p>
             </div>
@@ -65,20 +61,27 @@
 
     <section id="contact">
         <h2>Contact</h2>
-        <form id="contact-form">
-            <label for="name">Nom:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-            <button type="submit">Envoyer</button>
-        </form>
+        <p>Vous pouvez me contacter via les réseaux sociaux ou par email à <a href="mailto:lo.erbuer@gmail.com">lo.erbuer@gmail.com</a>.</p>
+        <div class="social-media">
+            <a href="www.linkedin.com/in/loïc-erbuer-82009a343" class="social-icon">🌐</a>
+            <a href="#" class="social-icon">🐦</a>
+            <a href="#" class="social-icon">📸</a>
+        </div>
     </section>
 
     <footer>
-        <p>&copy; 2023 [Votre Nom]. Tous droits réservés.</p>
+        <p>&copy; 2025 Erbuer Loïc. Tous droits réservés.</p>
     </footer>
+
+    <!-- Modal Structure -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 id="modalTitle"></h3>
+            <img id="modalImage" src="" alt="Project Image">
+            <p id="modalDescription"></p>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
