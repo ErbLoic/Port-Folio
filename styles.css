@@ -173,3 +173,18 @@ footer {
     text-decoration: none;
     cursor: pointer;
 }
+
+.stage-announcement {
+    background-color: #f0f8ff;
+    border-left: 5px solid #6B73FF;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.stage-announcement p {
+    margin: 0;
+    font-weight: bold;
+}
